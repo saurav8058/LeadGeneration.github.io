@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/Adashboard.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-bar">
+            <i class="bx bx-menu sidebarOpen"></i>
+            <span class="logo">  <a href="#" class="lead">LeadGeneration</a> </span>
+            <div class="menu">
+                <div class="logo-toggle">
+                   
+                    <span class="logo"> <a href="#">LeadGeneration</a> </span>
+                    <i class="bx bx-x siderbarClose"></i>
+
+                </div>
+               <ul class="nav-links">
+                    
+                <li> <a href="#"  target="mw"><img src="/static/ho.png" width="25px"></a></li>
+                    <li> <a href="http://localhost:8000/api/displayallemployee" target="mw">Employee</a></li>
+                    <li> <a href="http://localhost:8000/api/displayallcustomer" target="mw">Customer</a></li>
+                    <li><a href="#" >{{admin.0.adminname}}<a></li>
+                    <li> <a href="#">Logout</a></li>
+                    
+                        
+                    
+               </ul>
+               
+                
+           
+            </div>
+
+            
+       
+
+            <div class="darkLight-searchBox">
+                <div class="dark-light">
+                    <i class='bx bx-moon moon'></i>
+                    <i class='bx bx-sun sun'></i>
+                   
+
+                </div>
+                
+                
+            </div>
+            
+        </div>
+        
+        
+    </nav>
+    <div>
+        <iframe style="width: 100vw;height:100vh;" name="mw" frameborder="0">
+        </iframe>
+
+       </div>
+   
+   
+    <script src="/static/Adashboard.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,148 @@
+<style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+  
+   } 
+   
+  body{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+  
+   }
+     .box{
+         max-width: 650px;
+        padding: 28px;
+        margin: 0 28px;
+        box-shadow: 0 15px 20px;
+        background-color: BDC3C7;
+     }
+     .headerstyle{
+         font-size: 28px;
+        font-weight: 400;
+        text-align: left;
+        color: #2f4f4f;
+        padding-bottom: 5px;
+        border-bottom: 1px solid rgb(94, 22, 22);
+  
+     }
+     .content{
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-between;
+         padding: 20px 0;
+         
+       }
+       .input-box{
+         display: flex;
+         flex-wrap: wrap;
+         width: 50%;
+         padding-bottom: 30px;
+       }
+       .input-box:nth-child(2n){
+         
+         text-align: left;
+       }
+       .input-box input{
+         height: 30px;
+         width: 100%;
+         padding: 0 10px;
+         border-radius: 5px;
+         border: 1px solid #ccc;
+         outline: none;
+       }
+       .input-box input:is(:focus, :valid){
+         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+       }
+       @media(max-width:600px){
+         .box{
+           max-width: 280px;
+         }
+         .content{
+           max-height: 380px;
+           overflow: auto;
+         }
+         .input-box{
+           margin-bottom: 12px;
+           width: 100%;
+         }
+         .input-box:nth-child(2n){
+           justify-content: space-between;
+         }
+        
+     
+       
+       }
+      </style>
+      <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.6.2.min.js"></script>
+        
+       
+    
+    </head>
+    <html>
+        <body>
+        <title>Changes</title>
+        
+            <div class="box">
+                <form class="row g-3" action="http://localhost:8000/api/calldetailupdatedelete">
+                    <div class="col-md-12 headerstyle">
+                        CallDetail Updation
+                    </div>
+                    <input type="hidden" value="{{record.id}}" class="form-control" name="id">
+                    <div class="col-md-6 input-box">
+                        <label for="currentdate" class="form-label"><b>Current Date</b></label>
+                        <input type="date" class="form-control" value="{{record.currentdate}}" id="currentdate" name="currentdate">
+                      </div>
+                      <div class="col-md-6 input-box">
+                        <label for="conversation" class="form-label"><b>Conversation</b></label>
+                        <input type="text" class="form-control" value="{{record.conversation}}" id="conversation" name="conversation">
+                      </div>
+                     
+                      <div class="col-md-6 input-box">
+                        <label for="leadstatus" class="form-label"><b>Lead Status</b></label>
+                        <select id="leadstatus" name="leadstatus" class="form-select">
+                        <option selected>{{record.leadstatus}}<option>
+                         <option >Hot</option>
+                         <option>Warm</option>
+                          <option>Cold</option>
+                          <option>Freeze</option>
+                            
+                        </select>
+              
+                      </div>
+                      <div class="col-md-6 input-box">
+                        <label for="phonestatus" class="form-label"><b>Phone Status</b></label>
+                        <select id="phonestatus" name="phonestatus" class="form-select">
+                            <option selected>{{record.phonestatus}}</option>
+                            <option>Connected</option>
+                           <option>Not Connected</option>
+                        </select>
+                      </div>
+                      <div class="col-md-6 d-grid gap-2 ">
+                        <button type="submit" name="btn" value="Edit" class="btn btn-primary buttonstyle"><b>Edit</b></button>
+                      </div>
+    
+                      <div class="col-md-6 d-grid gap-2">
+                        <button type="submit" name="btn" value="Delete" class="btn btn-primary buttonstyle"><b>Delete</b></button>
+                      </div>
+                      <div class="col-md-12" style="display: flex; justify-content: center;padding: 5px;font-size: 16px; font-weight: bold;"> 
+            
+                        {{message}}
+                      </div>
+    
+                </form>     
+    
+    
+    
+            </div>
+    
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    </body>  
+    </html>

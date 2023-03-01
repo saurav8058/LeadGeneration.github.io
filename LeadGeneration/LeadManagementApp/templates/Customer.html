@@ -1,0 +1,177 @@
+<style>
+  *,
+  *:before
+  *:after
+  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ } 
+ 
+body{
+    padding-top: 82px;
+    background-color: #55efc4;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+
+ }
+   .box{
+    border-radius: 15px;
+       height: auto;
+       max-width: 750px;
+      padding: 18px;
+      margin: 0 28px;
+      box-shadow: 0 15px 20px;
+      background-color: #BDC3C7;
+   }
+   .headerstyle{
+       
+       font-size: 20px;
+      font-weight: 500;
+      text-align: left;
+      color: #d63031;
+      padding-bottom: 2px;
+      border-bottom: 1px #031812;
+      
+   }
+   
+   .content{
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: space-between;
+       padding: 20px 0;
+       
+     }
+     .input-box{
+       display: flex;
+       flex-wrap: wrap;
+       width: 70%;
+       padding-bottom: 18px;
+     }
+     .input-box:nth-child(2n){
+       
+       text-align: left;
+     }
+     .input-box input{
+       height: 28px;
+       width: 100%;
+       padding: 0 12px;
+       border-radius: 5px;
+       border: 1px solid #fff;
+       outline: none;
+     }
+     .input-box input:is(:focus, :valid){
+       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+     }
+     
+     @media(max-width:600px){
+       .box{
+         max-width: 400;
+       }
+       .content{
+         max-height: 380px;
+         overflow: auto;
+       }
+       .input-box{
+         margin-bottom: 12px;
+         width: 100%;
+       }
+       .input-box:nth-child(2n){
+         justify-content: space-between;
+       }
+
+       .genderstyle{
+        display: flex;
+        flex-direction: row;
+        justify-content:space-evenly;
+    
+     }
+      
+     }
+  
+</style>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.2.min.js"></script>
+    <script src="/static/statecity.js"></script>
+  
+</head>
+<html>
+
+    <title>Customer Inputs</title>
+    <body>
+      <div class="maincontainer">
+    
+        <div class="box">
+            <form class="row g-3" action="http://localhost:8000/api/customersubmit" method="post" enctype="multipart/form-data">
+                <div class="col-md-12 headerstyle">
+                    Customer Registration
+                </div>
+                <div class="content">
+                <div class="col-md-4 input-box">
+                    <label for="First Name" class="form-label"><b></b></label>
+                    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="FirstName">
+                </div>
+                <div class="col-md-4 input-box">
+                    <label for="Last Name" class="form-label"><b></b></label>
+                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="LastName">
+                </div>
+                <div class="col-md-3 input-box">
+                    <label for="dob" class="form-label"><b></b></label>
+                    <input type="date" class="form-control" id="dob" name="dob">
+                </div>
+                <div class="col-md-4 input-box">
+                    <label for="emailid" class="form-label"><b></b></label>
+                    <input type="text" class="form-control" id="emailid" name="emailid" placeholder="Email ID">
+                </div>
+                <div class="col-md-4 input-box">
+                    <label for="mobileno" class="form-label"><b></b></label>
+                    <input type="text" class="form-control" id="mobileno" name="mobileno" placeholder="Contact Number">
+                </div>
+                <div class="col-md-3 input-box">
+                    <label for="alternateno" class="form-label"><b></b></label>
+                    <input type="text" class="form-control" id="alternateno" name="alternateno" placeholder="Alternate Number">
+                </div>
+               
+                <div class="col-md-4 input-box">
+                    <label for="address" class="form-label"><b></b></label>
+                    <input type="text" class="form-control" id="address" name="address" placeholder="Address">
+                </div>
+                <div class="col-md-4 input-box">
+                    <label for="inputState" class="form-label"></label>
+                    <select id="inputState" class="form-select" name="state">
+                        <option selected>Choose State...</option>
+                    </select>
+                </div>
+                <div class="col-md-3 input-box">
+                    <label for="inputCity" class="form-label"></label>
+                    <select id="inputCity" class="form-select" name="city">
+                        <option selected>Choose City...</option>
+                    </select>
+                </div>
+                <div class="col-md-12 input-box">
+                    <label for="organizationname" class="form-label"><b></b></label>
+                    <input type="text" class="form-control" id="organizationname" name="organizationname" placeholder="Organization Name"> 
+                 </div>
+                <div class="col-md-12 input-box">
+                    <label for="photograph" class="form-label"><b>Upload Photo</b></label>
+                    <input type="file" class="form-control" id="photograph" name="photograph">
+                </div><br><br><br><br>
+                <div class="col-md-5 d-grid gap-2">
+                    <button type="submit" class="btn btn-primary"><b>Submit</b></button>
+                </div>
+                <div class="col-md-5 d-grid gap-2">
+                    <button type="reset" class="btn btn-primary"><b>Reset</b></button>
+                </div>
+                <div class="col-md-12" style="display: flex; justify-content: center; padding: 5px; font-size: 16px; font-weight: bold;">
+                    {{message}}
+                </div>
+            </div>
+            </form>
+        </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+      <body>
+    </html>
+   

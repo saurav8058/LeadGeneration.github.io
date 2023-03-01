@@ -1,0 +1,14 @@
+<html>
+    <center>
+        <form action="http://localhost:8000/api/update_employee_image" method="post" enctype="multipart/form-data" class="row g-3"> {% csrf_token %}
+            <input type="hidden" value="{{id}}" class="form-control" name="id">
+
+            <h1>{{employeename}}</h1>
+        <img src="/{{picture}}" width="200"><br><br>
+        <b>Select New Image to Upload:</b><br><br>
+        <input type="file" required name="photograph"><br><br><br>
+
+        <input type="submit" value="Upload New Image"><br>
+        </form>
+    </center>
+</html>

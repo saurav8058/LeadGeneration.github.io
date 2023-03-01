@@ -1,0 +1,180 @@
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+
+ } 
+ 
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+ }
+   .box{
+       max-width: 650px;
+      padding: 28px;
+      margin: 0 28px;
+      box-shadow: 0 15px 20px;
+      background-color: BDC3C7;
+   }
+   .headerstyle{
+       font-size: 28px;
+      font-weight: 400;
+      text-align: left;
+      color: #2f4f4f;
+      padding-bottom: 5px;
+      border-bottom: 1px solid rgb(94, 22, 22);
+
+   }
+   .content{
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: space-between;
+       padding: 20px 0;
+       
+     }
+     .input-box{
+       display: flex;
+       flex-wrap: wrap;
+       width: 50%;
+       padding-bottom: 30px;
+     }
+     .input-box:nth-child(2n){
+       
+       text-align: left;
+     }
+     .input-box input{
+       height: 30px;
+       width: 100%;
+       padding: 0 10px;
+       border-radius: 5px;
+       border: 1px solid #ccc;
+       outline: none;
+     }
+     .input-box input:is(:focus, :valid){
+       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+     }
+     @media(max-width:600px){
+       .box{
+         max-width: 280px;
+       }
+       .content{
+         max-height: 380px;
+         overflow: auto;
+       }
+       .input-box{
+         margin-bottom: 12px;
+         width: 100%;
+       }
+       .input-box:nth-child(2n){
+         justify-content: space-between;
+       }
+      
+   
+     
+     }
+    </style>
+    
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+      <title>Manager Interface</title>
+      
+    </head>
+    <body>
+      <div class="box">
+        <form action="http://localhost:8000/api/calldetailsubmit" method="post"  class="row g-3">
+          
+          <div class="col-md-12 headerstyle">
+            Call Detail <span style"aliign-item:center"><a href="/api/displayfilldetail" style="text-decoration: none; align-item:center">All Feel Details</a>
+            </div>
+          
+          <div class="content">
+           
+            <div class="col-md-2 input-box">
+              <label for="customerid" class="form-label"><b>Customer Id</b></label>
+              <input type="text" value="{{record.id}}" class="form-control" id="customerid" name="customerid">
+            </div>
+            <div class="col-md-4 input-box">
+              <label for="customername" class="form-label"><b>Customer Name</b></label>
+              <input type="text" value="{{record.firstname}} {{record.lastname}}" class="form-control" id="customername" name="customername">
+            </div>
+            <div class="col-md-2 input-box">
+              <label for="callerid" class="form-label"><b>Caller Id</b></label>
+              <input type="text" value="{{user.id}}" class="form-control" id="callerid" name="callerid">
+            </div>
+            <div class="col-md-3 input-box ">
+              <label for="status" class="form-label"><b>Caller Status</b></label>
+              <input type='text' id="status" name="status" value="{{user.caller}}" class="form-control">
+                  
+            </div>
+            <div class="col-md-2 input-box">
+              <label for="callername" class="form-label"><b>Caller Name</b></label>
+              <input type="text" value="{{user.name}}" class="form-control" id="callername" name="callername">
+            </div>
+            
+           
+            <div class="col-md-4 input-box">
+              <label for="currentdate" class="form-label"><b>Current Date</b></label>
+              <input type="date" class="form-control" id="currentdate" name="currentdate">
+            </div>
+            <div class="col-md-2 input-box">
+              <label for="leadstatus" class="form-label"><b>Lead Status</b></label>
+              <select id="leadstatus" name="leadstatus" class="form-select">
+                  <option selected>Choose state...</option>
+                  <option>Hot</option>
+                  <option>Warm</option>
+                  <option>Cold</option>
+                  <option>Freeze</option>
+                  
+              </select>
+    
+            </div>
+            <div class="col-md-3 input-box">
+              <label for="phonestatus" class="form-label"><b>Phone Status</b></label>
+              <select id="phonestatus" name="phonestatus" class="form-select">
+                  <option selected>Choose status...</option>
+                  <option>Connected</option>
+                  <option>Not Connected</option>
+              </select>
+            </div>
+            
+            <div class="col-md-8 input-box">
+              <label for="conversation" class="form-label"><b>Conversation</b></label>
+              <input type="text" class="form-control" id="conversation" name="conversation">
+            </div>
+           
+            <div class="col-md-3 input-box">
+              
+              <label for="mobileno" class="form-label"><b>Mobile No</b></label>
+              <input type="text" value="{{record.mobileno}}" class="form-control" id="mobileno" name="mobileno">
+    
+            </div>
+           
+            
+           
+            <div class="col-md-5 d-grid gap-2">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            <div class="col-md-5 d-grid gap-2">
+              <button type="submit" class="btn btn-primary">Reset</button>
+            </div>
+          </div>
+          <div class="col-md-12" style="display: flex; justify-content: center;padding:5px;font-size:16px; font-weight:bold;">
+            {{message}}
+        </div>
+            
+          
+        </form>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    </body>
+    </html>
