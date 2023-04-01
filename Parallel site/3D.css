@@ -1,0 +1,89 @@
+*{
+    margin: 0;padding: 0;
+    box-sizing: border-box;
+}
+
+#wrapper{
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    perspective: 10px;
+}
+
+.container{
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    z-index: -1;
+}
+
+.back ,.ground{
+    position: absolute;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.back{
+    transform: translateZ(-40px) scale(5);
+}
+
+.ground{
+    margin-top: 600px;
+    transform: translateZ(-30px) scale(3.2);
+}
+h1{
+    position: absolute;
+    top: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 5rem;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px black;
+
+}
+
+section{
+    background-color: black;
+    color: white;
+    padding: 5rem 0;
+}
+.secheading{
+    font-size: 3rem;
+    padding: 0 10rem;
+    text-shadow: 0 0 10px black;
+}
+.text{
+    font-size: 1.5rem;
+    padding: 0 10rem;
+    margin:  5rem 0;
+}
+
+.bg1{
+    background-image: url(/programming.avif);
+}
+
+.bg{
+    position: relative;
+    width: 100%;
+    background-attachment: fixed;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.disc{
+    position: absolute;
+  
+    padding: 0.5rem 2.5rem;
+    top: 18%;
+    left: 55%;
+    transform: translateX(-50%) translateX(-50%);
+    color: black;
+   
+}
+
