@@ -41,21 +41,7 @@ urlpatterns = [
     
     
     re_path(r'^api/customerinterface',customerview.CustomerInterface),
-    re_path(r'^api/customersubmit',customerview.CustomerSubmit),
-    re_path(r'^api/displayallcustomer',customerview.DisplayAllCustomer),
-    re_path(r'^api/customerlist',customerview.Customer_List),
-    re_path(r'^api/customerbyid',customerview.Customer_List_By_Id),
-    re_path(r'^api/customerupdatedelete',customerview.Customer_Update_Delete), 
-    
-    
-    re_path(r'^api/login',login.Login),
-    re_path(r'^api/admindashboard',login.AdminDashboard),
-    re_path(r'^api/managerdashboard',login.ManagerDashboard),
-    re_path(r'^api/employeedashboard',login.EmployeeDashboard),
-    re_path(r'^api/checkadminlogin',login.Check_Admin_Login),
-    re_path(r'^api/checkemployeelogin',login.Check_Employee_Login),
-    re_path(r'^api/checkmanagerlogin',login.Check_Manager_Login),
-    re_path(r'^api/logoutadmin',login.LogoutAdmin),
+    re
     
   
     
